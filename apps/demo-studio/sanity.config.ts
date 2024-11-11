@@ -14,10 +14,10 @@ import { conference } from 'conference-sanity-schema';
 export default defineConfig([
   {
     name: 'default',
-    title: 'Vyuh Demo',
+    title: 'HRK Vyuh CMS Studio',
     basePath: '/',
 
-    projectId: '8b76lu9s',
+    projectId: 'y2047bus',
     dataset: 'production',
 
     plugins: [
