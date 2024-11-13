@@ -12,7 +12,9 @@ Series _$SeriesFromJson(Map<String, dynamic> json) => Series(
       overview: json['overview'] as String,
       posterImage: posterImageFromPath(json['poster_path'] as String?),
       backdropImage: backdropImageFromPath(json['backdrop_path'] as String?),
-      firstAirDate: dateTimeFromJson(json['first_air_date'] as String?),
+      firstAirDate: json['first_air_date'] == null
+          ? null
+          : DateTime.parse(json['first_air_date'] as String),
       voteAverage: (json['vote_average'] as num?)?.toDouble(),
       voteCount: (json['vote_count'] as num?)?.toInt(),
       tagline: json['tagline'] as String?,
@@ -44,7 +46,9 @@ SeriesShortInfo _$SeriesShortInfoFromJson(Map<String, dynamic> json) =>
       overview: json['overview'] as String,
       posterImage: posterImageFromPath(json['poster_path'] as String?),
       backdropImage: backdropImageFromPath(json['backdrop_path'] as String?),
-      releaseDate: dateTimeFromJson(json['first_air_date'] as String?),
+      releaseDate: json['first_air_date'] == null
+          ? null
+          : DateTime.parse(json['first_air_date'] as String),
       voteAverage: (json['vote_average'] as num?)?.toDouble(),
       voteCount: (json['vote_count'] as num?)?.toInt(),
     );

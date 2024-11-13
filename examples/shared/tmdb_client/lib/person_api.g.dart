@@ -14,8 +14,12 @@ Person _$PersonFromJson(Map<String, dynamic> json) => Person(
           ?.map((e) => e as String)
           .toList(),
       biography: json['biography'] as String?,
-      birthday: dateTimeFromJson(json['birthday'] as String?),
-      deathDay: dateTimeFromJson(json['deathday'] as String?),
+      birthday: json['birthday'] == null
+          ? null
+          : DateTime.parse(json['birthday'] as String),
+      deathDay: json['deathday'] == null
+          ? null
+          : DateTime.parse(json['deathday'] as String),
       gender: (json['gender'] as num).toInt(),
       homepage: json['homepage'] as String?,
       imdbId: json['imdb_id'] as String?,

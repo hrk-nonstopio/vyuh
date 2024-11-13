@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:json_annotation/json_annotation.dart';
 import 'package:tmdb_client/tmdb_client.dart';
-import 'package:tmdb_client/util.dart';
 import 'package:vyuh_core/vyuh_core.dart';
 
 part 'person_api.g.dart';
@@ -57,10 +56,9 @@ final class Person extends BasePerson {
 
   final String? biography;
 
-  @JsonKey(fromJson: dateTimeFromJson)
   final DateTime? birthday;
 
-  @JsonKey(name: 'deathday', fromJson: dateTimeFromJson)
+  @JsonKey(name: 'deathday')
   final DateTime? deathDay;
 
   final int gender;

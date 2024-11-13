@@ -12,7 +12,9 @@ Movie _$MovieFromJson(Map<String, dynamic> json) => Movie(
       overview: json['overview'] as String,
       posterImage: posterImageFromPath(json['poster_path'] as String?),
       backdropImage: backdropImageFromPath(json['backdrop_path'] as String?),
-      releaseDate: dateTimeFromJson(json['release_date'] as String?),
+      releaseDate: json['release_date'] == null
+          ? null
+          : DateTime.parse(json['release_date'] as String),
       voteAverage: (json['vote_average'] as num?)?.toDouble(),
       voteCount: (json['vote_count'] as num?)?.toInt(),
       tagline: json['tagline'] as String?,
@@ -35,7 +37,9 @@ MovieShortInfo _$MovieShortInfoFromJson(Map<String, dynamic> json) =>
       overview: json['overview'] as String,
       posterImage: posterImageFromPath(json['poster_path'] as String?),
       backdropImage: backdropImageFromPath(json['backdrop_path'] as String?),
-      releaseDate: dateTimeFromJson(json['release_date'] as String?),
+      releaseDate: json['release_date'] == null
+          ? null
+          : DateTime.parse(json['release_date'] as String),
       voteAverage: (json['vote_average'] as num?)?.toDouble(),
       voteCount: (json['vote_count'] as num?)?.toInt(),
     );

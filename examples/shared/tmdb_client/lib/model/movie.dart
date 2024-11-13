@@ -1,13 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:tmdb_client/tmdb_client.dart';
-import 'package:tmdb_client/util.dart';
 
 part 'movie.g.dart';
 
 @JsonSerializable()
 final class Movie extends FeaturedShow {
   final String title;
-  @JsonKey(name: 'release_date', fromJson: dateTimeFromJson)
+  @JsonKey(name: 'release_date')
   final DateTime? releaseDate;
 
   final int? budget;
@@ -55,7 +54,7 @@ final class MovieShortInfo extends ShortInfo {
   final String title;
 
   @override
-  @JsonKey(name: 'release_date', fromJson: dateTimeFromJson)
+  @JsonKey(name: 'release_date')
   final DateTime? releaseDate;
 
   MovieShortInfo({

@@ -1,13 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:tmdb_client/tmdb_client.dart';
-import 'package:tmdb_client/util.dart';
 
 part 'series.g.dart';
 
 @JsonSerializable()
 final class Series extends FeaturedShow {
   final String name;
-  @JsonKey(name: 'first_air_date', fromJson: dateTimeFromJson)
+  @JsonKey(name: 'first_air_date')
   final DateTime? firstAirDate;
 
   @JsonKey(name: 'number_of_episodes')
@@ -74,7 +73,7 @@ final class Provider {
 @JsonSerializable()
 final class SeriesShortInfo extends ShortInfo {
   @override
-  @JsonKey(name: 'first_air_date', fromJson: dateTimeFromJson)
+  @JsonKey(name: 'first_air_date')
   final DateTime? releaseDate;
 
   @override
