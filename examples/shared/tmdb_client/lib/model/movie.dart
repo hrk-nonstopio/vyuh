@@ -51,7 +51,6 @@ final class Movie extends FeaturedShow {
 @JsonSerializable()
 final class MovieShortInfo extends ShortInfo {
   @override
-  @JsonKey(name: 'title')
   final String title;
 
   @override

@@ -7,20 +7,11 @@ final class Trailer {
   final String iso_3166_1;
   final bool official;
   final String id;
-
   @JsonKey(name: 'published_at')
   final String publishedAt;
-
-  @JsonKey(name: 'name')
   final String name;
-
-  @JsonKey(name: 'key')
   final String key;
-
-  @JsonKey(name: 'site')
   final String site;
-
-  @JsonKey(name: 'type')
   final String type;
 
   Trailer(
